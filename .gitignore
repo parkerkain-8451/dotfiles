@@ -1,3 +1,5 @@
 undo_dir
 mac_mini.zshrc
+work_mac.zshrc
 *.swp
+system_specific.tmux.conf
