@@ -14,12 +14,12 @@ done;
 for curr_dir in ./configs/*; do
 	dirname=$(echo "${curr_dir}" | sed 's:.*/::')
     echo "Moving ${curr_dir} to ~/${dirname}"
-	cp -R ${curr_dir} ~/${dirname}
+	cp -R ${curr_dir} ~/
 done;
 
 # Move hidden directories!
 for curr_dir in ./configs/.[a-z]*; do
 	dirname=$(echo "${curr_dir}" | sed 's:.*/::')
     echo "Moving ${curr_dir} to ~/${dirname}"
-	cp -R ${curr_dir} ~/${dirname}
+	cp -R ${curr_dir} ~/
 done;
