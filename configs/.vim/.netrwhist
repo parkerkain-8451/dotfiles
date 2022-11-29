@@ -1,10 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
-let g:netrw_dirhist_8='/Users/p848332/Documents/Labs/cookiecutter/labs-ui-template/.8451'
-let g:netrw_dirhist_7='/Users/p848332/Documents/Labs/research/01_d3/day_3'
-let g:netrw_dirhist_6='/Users/p848332/Documents/Labs/research/01_d3/day_2'
-let g:netrw_dirhist_5='/Users/p848332/Documents/Labs/research/01_d3'
-let g:netrw_dirhist_4='/Users/p848332/Documents/Labs/research'
-let g:netrw_dirhist_3='/Users/p848332/Documents/Labs/research/01_d3'
-let g:netrw_dirhist_2='/Users/p848332/Documents/Labs/research/01_d3/day_3'
-let g:netrw_dirhist_1='/Users/p848332/Documents/Other/Learning/vim'
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/parkerkain/Documents/admin/dotfiles/configs/.vim/plugged/ale'
