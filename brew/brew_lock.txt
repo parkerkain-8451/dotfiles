@@ -1,0 +1,31 @@
+bash 5.2.15
+bash-completion@2 2.11
+bat 0.23.0
+btop 1.2.13
+ca-certificates 2023-08-22
+cask 0.9.0
+cloc 1.96
+cowsay-apj 3.7.0
+curl 8.3.0
+exa 0.10.1_1
+figlet 2.2.5
+fzf 0.34.0
+gcc 13.1.0
+gh 2.30.0
+git 2.38.1 2.41.0_2
+glow 1.5.0
+jless 0.8.0
+lazygit 0.38.2
+nb 7.5.5
+neovim 0.9.2
+pandoc 3.1.6.1 3.1.1
+python@3.12 3.12.0
+ripgrep 13.0.0
+slides 0.9.0
+stern 1.22.0
+task 2.6.2_1
+taskwarrior-tui 0.25.4
+xsv 0.13.0
+amethyst 0.20.0
+font-hack-nerd-font 3.0.0
+kitty 0.30.1
