@@ -13,3 +13,6 @@ unset conf
 
 # Exa Configuration
 alias l="exa --long --header --all --icons"
+
+# Set up Starship
+eval "$(starship init zsh)"

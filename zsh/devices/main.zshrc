@@ -1,5 +1,4 @@
 # Aliases - shortcuts
-alias ll="ls -alh"
 alias dotfiles="cd ~/dotfiles"
 
 # Open the crossword
@@ -20,14 +19,11 @@ crossword(){
 # Alias lazygit
 alias lg='lazygit'
 
-# Allow FZF to see hidden files
+# ripgrep overriding standard grep
 if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files --hidden'
-  export FZF_DEFAULT_OPTS='-m'
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+  export FZF_DEFAULT_OPTS='-m' 
 fi
-
-# Alias NB for my todo list (in a todos folder)
-alias todo="nb todo open todos:"
 
 # Alias for taskwarrior tui
 alias tt="taskwarrior-tui"
