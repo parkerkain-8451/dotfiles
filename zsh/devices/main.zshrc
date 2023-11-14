@@ -10,7 +10,7 @@ crossword(){
         open https://www.nytimes.com/puzzles/stats
         open https://www.nytimes.com/games/wordle/index.html
         open https://guessthe.game/
-        open https://guessthe.audio/
+        open https://guesstheaudio.com/
         open https://worldle.teuteuf.fr/
         open https://oec.world/en/tradle/
         open https://maps.google.com

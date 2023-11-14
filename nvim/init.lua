@@ -41,6 +41,9 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 -- Remove highlighting on double ESC
 vim.keymap.set("n", "<ESC><ESC>", "<cmd>:noh<CR>", { noremap = true, silent = true })
 
+-- Keybind for vertical split
+vim.keymap.set("n", "<leader>vs", "<cmd>:vsplit<CR>", { noremap = true, silent = true })
+
 -- Kick off COQ
 local lsp = require "lspconfig"
 local coq = require "coq"
