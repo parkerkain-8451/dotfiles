@@ -19,6 +19,9 @@ crossword(){
 # Alias lazygit
 alias lg='lazygit'
 
+# Alias lazydocker
+alias ld='lazydocker'
+
 # ripgrep overriding standard grep
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'

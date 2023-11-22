@@ -14,5 +14,8 @@ unset conf
 # Exa Configuration
 alias l="exa --long --header --all --icons"
 
+# Bat theming
+export BAT_THEME="gruvbox-dark"
+
 # Set up Starship
 eval "$(starship init zsh)"
