@@ -31,4 +31,5 @@ alias l="exa --long --header --all --icons"
 export BAT_THEME="gruvbox-dark"
 
 # Set up Starship
+export STARSHIP_CONFIG="$CONFIG_ROOT/starship/starship.toml"
 eval "$(starship init zsh)"
