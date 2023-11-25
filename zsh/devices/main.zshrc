@@ -30,3 +30,6 @@ fi
 
 # Alias for taskwarrior tui
 alias tt="taskwarrior-tui"
+
+# Print the cool neofetch thing
+neofetch

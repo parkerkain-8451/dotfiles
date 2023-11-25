@@ -45,11 +45,12 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init("/home/parker/.config/awesome/default/theme.lua")
+beautiful.wallpaper = "/home/parker/Documents/admin/wallpapers/gruvbox-dark.png"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
-editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -63,17 +64,17 @@ modkey = "Mod4"
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
+    -- awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
-    awful.layout.suit.corner.nw,
+    -- awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.magnifier,
+    -- awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
@@ -94,7 +95,6 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "open terminal", terminal }
                                   }
                         })
-
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
@@ -169,7 +169,12 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    local names = {"main", "www", "discord", "4", "5", "6", "7", "8", "9"}
+    local l = awful.layout.suit
+    local layouts = {l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile}
+    awful.tag(names, s, layouts)
+
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -185,6 +190,69 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
+        style = {shape = gears.shape.powerline},
+        layout = {
+            spacing = -12,
+            spacing_widget = {
+                color = '#dddddd',
+                shape = gears.shape.powerline,
+                widget = wibox.widget.separator,
+            },
+            layout = wibox.layout.fixed.horizontal
+        },
+        widget_template = {
+            {
+                {
+                    {
+                        {
+                            {
+                                id = 'index_role',
+                                widget = wibox.widget.textbox,
+                            },
+                            margins = 4, 
+                            widget = wibox.container.margin,
+                        },
+                        bg = "#dddddd",
+                        shape = gears.shape.circle,
+                        widget = wibox.container.background,
+                    },
+                    {
+                        {
+                            id = 'icon_role',
+                            widget = wibox.widget.imagebox,
+                        },
+                        margins = 2, widget = wibox.container.margin,
+                    },
+                    {
+                        id = 'text_role',
+                        widget = wibox.widget.textbox,
+                    },
+                    layout = wibox.layout.fixed.horizontal,
+                },
+                left = 18,
+                right = 18, 
+                widget = wibox.container.margin
+            },
+            id = 'background_role',
+            widget = wibox.container.background,
+            -- Add support for hover colors and an index label
+            create_callback = function(self, c3, index, objects)
+                self:get_children_by_id('index_role')[1].markup = '<b> '..index..' </b>'
+                self:connect_signal('mouse::enter', function()
+                    if self.bg ~= '#ff0000' then
+                        self.backup = self.bg
+                        self.has_backup = true
+                    end
+                    self.bg = '#ff0000'
+                end)
+                self:connect_signal('mouse::leave', function()
+                    if self.has_backup then self.bg = self.backup end
+                end)
+            end,
+            update_callback = function(self, c3, index, objects)
+                self:get_children_by_id('index_role')[1].markup = '<b> '..index..' </b>'
+            end,
+        },
         buttons = taglist_buttons
     }
 
@@ -562,3 +630,8 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+--
+
+-- Autostart applications
+-- awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("~/.config/awesome/autostart.sh")

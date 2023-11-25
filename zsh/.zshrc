@@ -16,6 +16,7 @@ export CONFIG_ROOT=~/dotfiles
 
 # This sets neovim to look in your config directory - not ~/.config/nvim
 export XDG_CONFIG_HOME=$CONFIG_ROOT
+export EDITOR="nvim"
 
 # Load zshrc files from config directories.
 for conf in $CONFIG_ROOT/zsh/devices/*; do
