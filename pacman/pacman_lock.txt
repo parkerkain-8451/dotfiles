@@ -2,3 +2,4 @@ starship
 exa
 kitty
 lazygit
+tree

@@ -1,4 +1,5 @@
 lazydocker
+awesome/default
 *work*
 lazygit
 gh
@@ -35,3 +36,10 @@ powermanagementprofilesrc
 pulse/
 qmk/
 systemsettingsrc
+gtk-2.0/
+neofetch/
+nitrogen/
+nvm/
+package.json
+package-lock.json
+adventofcode.session
