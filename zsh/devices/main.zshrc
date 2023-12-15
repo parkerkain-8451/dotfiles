@@ -31,5 +31,10 @@ fi
 # Alias for taskwarrior tui
 alias tt="taskwarrior-tui"
 
+# Alias for tasks done in that last week
+alias task-done="task end.after:today-1wk completed"
+
 # Print the cool neofetch thing
 neofetch
+
+
