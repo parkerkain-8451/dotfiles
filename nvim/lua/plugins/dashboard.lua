@@ -27,7 +27,7 @@ return {
 		desc = 'Find File           ',
 		desc_hl = 'String',
 		key = 'f',
-		keymap = 'SPC f f',
+		keymap = 'SPC t f',
 		key_hl = 'Number',
 		key_format = ' %s', -- remove default surrounding `[]`
 		action = "lua require('telescope.builtin').find_files()"
@@ -36,7 +36,7 @@ return {
 		icon = ' ',
 		desc = 'Live Grep',
 		key = 'g',
-		keymap = 'SPC f d',
+		keymap = 'SPC t g',
 		key_format = ' %s', -- remove default surrounding `[]`
 		action = "lua require('telescope.builtin').live_grep()"
 	      },
@@ -44,7 +44,7 @@ return {
 		icon = ' ',
 		desc = 'Search Help',
 		key = 'h',
-		keymap = 'SPC f d',
+		keymap = 'SPC t h',
 		key_format = ' %s', -- remove default surrounding `[]`
 		action = "lua require('telescope.builtin').help_tags()"
 	      },

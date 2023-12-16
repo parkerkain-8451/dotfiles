@@ -24,8 +24,8 @@ alias ld='lazydocker'
 
 # ripgrep overriding standard grep
 if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
-  export FZF_DEFAULT_OPTS='-m' 
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --border --height 40%' 
 fi
 
 # Alias for taskwarrior tui
@@ -33,6 +33,10 @@ alias tt="taskwarrior-tui"
 
 # Alias for tasks done in that last week
 alias task-done="task end.after:today-1wk completed"
+
+# Set up note taking stuff
+export nt=~/.nt
+alias nt='cd ~/.nt;nvim -o "$(rg --files -g '!archive/' $nt | fzf)"'
 
 # Print the cool neofetch thing
 neofetch
