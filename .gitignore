@@ -1,6 +1,7 @@
 lazydocker
 awesome/default
 *work*
+arch_linux.zshrc
 lazygit
 gh
 k9s/config.yml
@@ -43,3 +44,4 @@ nvm/
 package.json
 package-lock.json
 adventofcode.session
+Cider
